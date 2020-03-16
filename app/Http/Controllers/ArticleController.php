@@ -23,4 +23,16 @@ class ArticleController extends Controller
         'data' => $articles
       ], 200);
     }
+
+    /**
+     * Detail Article
+     */
+    public function detail($id) 
+    {
+      $article = Article::find($id);
+      return response([
+        'status' => true,
+        'data' => $article
+      ]);
+    }
 }
