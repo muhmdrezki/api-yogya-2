@@ -23,7 +23,7 @@ class BroadcastController extends Controller
    * Get Broadcast for home page
    */
   public function broadcastHome() {
-    $broadcasts = Broadcast::random(4);
+    $broadcasts = Broadcast::all()->random(4);
     return response()->json([
       'status' => true,
       'data' => $broadcasts
