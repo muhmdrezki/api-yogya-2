@@ -18,4 +18,15 @@ class BroadcastController extends Controller
       'data' => $broadcasts
     ]);
   }
+
+  /**
+   * Get Broadcast for home page
+   */
+  public function broadcastHome() {
+    $broadcasts = Broadcast::rand(4);
+    return response()->json([
+      'status' => true,
+      'data' => $broadcasts
+    ]);
+  }
 }
