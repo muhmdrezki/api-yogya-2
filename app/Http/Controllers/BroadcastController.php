@@ -29,4 +29,16 @@ class BroadcastController extends Controller
       'data' => $broadcasts
     ]);
   }
+
+  /**
+   * Get Detail Broadcast
+   */
+  public function broadcastDetail($id)
+  {
+    $broadcast = Broadcast::find($id);
+    return json()->json([
+      'status' => true,
+      'data' => $broadcast
+    ]);
+  }
 }
