@@ -12,7 +12,12 @@ class ArticleController extends Controller
      */
     public function index()
     {
-      $articles = Article::all();
+      $articles = Article::all()->random(5);
+      foreach ($articles as $article) {
+        # code...
+        $article['truncated_title'] = substr($article->title, 10).'....';
+        $article['truncated_body'] = substr($article->body, 15).'....';
+      }
       return response()->json([
         'status' => true,
         'data' => $articles
