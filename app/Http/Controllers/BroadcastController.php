@@ -36,7 +36,7 @@ class BroadcastController extends Controller
   public function broadcastDetail($id)
   {
     $broadcast = Broadcast::find($id);
-    return json()->json([
+    return response()->json([
       'status' => true,
       'data' => $broadcast
     ]);
