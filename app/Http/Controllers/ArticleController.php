@@ -15,8 +15,8 @@ class ArticleController extends Controller
       $articles = Article::all()->random(5);
       foreach ($articles as $article) {
         # code...
-        $article['truncated_title'] = substr($article->title, 10).'....';
-        $article['truncated_body'] = substr($article->body, 15).'....';
+        $article['truncated_title'] = substr($article->title, 1, 10).'....';
+        $article['truncated_body'] = substr($article->body, 1, 15).'....';
       }
       return response()->json([
         'status' => true,
