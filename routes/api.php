@@ -28,6 +28,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('closed', 'DataController@closed');
     Route::get('broadcast', 'BroadcastController@index');
     Route::get('broadcast-home', 'BroadcastController@broadcastHome');
+    Route::get('broadcast/{id}', 'ArticleController@broadcstDetail');
     Route::get('articles', 'ArticleController@index');
     Route::get('article/{id}', 'ArticleController@detail');
 });
